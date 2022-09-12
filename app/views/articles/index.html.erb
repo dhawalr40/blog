@@ -1,31 +1,55 @@
-<%= render 'layouts/nevigation' %>
-<div class="outerBox">
-  <%= render "form", article: @article1 %>
-</div>
-  <div class="postDisplay">
-    <ul>
-      <% @articles.each do |article| %>
-        <li>
-          <p >
-            <%= article.body %>
-          </p>
-
-          <p>
-            <%= link_to "comment", article %>
-        <%= link_to "Edit", edit_article_path(article) %>
-            <%= link_to "Destroy", article_path(article), data: {
-              turbo_method: :delete,
-              turbo_confirm: "Are you sure?"
-            } %>
-          </p>
-        </li>
-      <% end %>
-    </ul>
-    <div >
-
-      <%= link_to "New Article", new_article_path, class: "btn btn-primary" %>
+<div class="container">
+  <%= render 'layouts/nevigation' %>
+  <div class="outerBox">
+    <div class="postdev">
+      <%= render "form", article: @article1 %>
     </div>
+    <!--  postbody-->
+
+    <div>
+      <% @articles.each do |article| %>
+        <div class="postDisplay1">
+
+          <p><%= article.body %></p>
+
+
+          <div class="dropdown">
+            <span>...</span>
+            <div class="dropdown-content">
+              <p> <%= link_to "Edit", edit_article_path(article) %></p>
+              <p>
+                <%= link_to "Destroy", article_path(article), data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+              </p>
+            </div>
+          </div>
+          <hr>
+          <div class="like_Comment">
+            <p>Like</p>
+            <p>
+              <%= link_to "comment", article %>
+            </p>
+          </div>
+          <hr>
+                                <!--commentPost-->
+          <div>
+
+          </div>
+
+        </div>
+      <% end %>
+
+    </div>
+
+    <!--postbodt end-->
+
   </div>
+
+</div>
+
+
 
 
 <!--<div class="row">-->
