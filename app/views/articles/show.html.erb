@@ -1,17 +1,55 @@
-<h1><%= @article.title %></h1>
+<div class="pageIIbody ">
+  <%= render 'layouts/nevigation' %>
+  <div class="commentOutter">
+    <br>
+    <div class="commentinner">
+      <div>
+        <div class="commentContent">
+          <h1><%= @article.title %></h1>
 
-<p><%= @article.body %></p>
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
+          <div class="dropdown">
+            <span>...</span>
+            <div class="dropdown-content">
+              <p> <%= link_to "Edit", edit_article_path(@article) %></p>
+              <p>
+                <%= link_to "Destroy", article_path(@article), data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+              </p>
+            </div>
+          </div>
+        </div>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+        <h2 style="font-size: 25px"><%= @article.body %></h2>
+      </div>
+      <hr>
+      <div class="setLike">
+        <div>
+          <%= image_tag("heart.png") %>
+          like
+        </div>
+        <div>
+          <%= image_tag("comment.png") %>
+          comment
+        </div>
+      </div>
+      <hr>
+      <div class="commentBox">
+        <%= render 'comments/form' %>
+      </div>
+
+
+      <h3>Comments</h3>
+      <hr>
+      <div class="printComment">
+        <%= render @article.comments %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+
+</div>
 

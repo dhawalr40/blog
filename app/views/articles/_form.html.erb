@@ -9,13 +9,26 @@
       <% end %>
   </div>
 
-  <div>
-    <div class="inner3">
-      <p>live video</p> <p>photo/Video</p> <p>Feeling</p>
+  <div class="inner2">
+    <div class="inner2_content">
+      <div>
+        <%= image_tag "video.png"%>
+        <spam>live video</spam>
+      </div>
+
+      <div>
+        <%= image_tag "photo.png"%>
+        <spam>photo/Video</spam>
+      </div>
+
+      <div>
+        <%= image_tag "smile.png"%>
+        <spam>Feeling</spam>
+      </div>
     </div>
 
-    <div class="inner2">
-      <%= form.submit "Post" ,class:"btn btn-primary" %>
+    <div class="inner3">
+      <%= form.submit "Post" ,class:"inner2_btn" %>
     </div>
     <% end %>
   </div>

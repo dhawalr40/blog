@@ -1,89 +1,154 @@
 
-.postdev{
-    width: 905px;
-    height: 165px;
-    margin: 0px 0px 0px 120px;
+.mainbody{
+    position: relative;
+    width: 1440px;
+    height: 1144px;
+
+    background:#FFFFFF;;
+    border-radius: 20px;
+    left: 150px;
+}
+
+.innerMain{
+    position: absolute;
+    width: 1099px;
+    height: auto;
+    left: 170px;
+    top: 96px;
+
+    background: #F9FAFB;
+    border-radius: 14px;
+}
+
+.postBlock{
+    margin: auto;
+    width: 1041px;
+     height: 160px;
+    left: 188px;
+    top: 125px;
     background: #FFFFFF;
-    border-radius: 50px;
+    border-radius: 14px;
 }
 
-.outerBox{
-    /*position: absolute;*/
-    width: 1210px;
-    padding-top: 40px;
-    /*height: 1000px;*/
-    left: 193px;
-    /*top: 115px;*/
 
-    background: #EFEFEF;
-    border-radius: 45px;
-}
 
 .inner1{
-    margin-left: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    height: 90px;
+    align-content: space-around;
+    align-items: center;
 }
 
 .inner1 textarea{
-    width: 90%;
-    margin-top: 25px;
+    width: 989px;
+    height: 50px;
+    left: 219px;
+    top: 145px;
+    background: #F5F6F8;
+    border-radius: 14px;
 }
 
 .inner2{
-    float: right;
-    margin: -45px 110px 0px 0px;
-}
-.inner3{
     display: flex;
-    gap:30px;
-    margin-top: 10px;
-    margin-left: 70px;
+    justify-content: space-between;
+    align-items: center;
+    /*margin-top: 25px;*/
+
 }
 
+.inner2_btn{
+    background: #377DFF;
+    border-radius: 10px;
+    width: 151px;
+    height: 50px;
+    left: 1057px;
+    top: 220px;
+
+}
+.inner2_content{
+    display: flex;
+    gap: 25px;
+    align-items: baseline;
+    width: 370px;
+    justify-content: flex-end;
+
+}
+
+.inner3{
+    width: 178px;
+}
 
 .postIn{
-    border: 1px solid rgba(51, 51, 51, 0.3);
-    border-radius: 30px;
-    width: inherit;
-    background: #EFEFEF;
+    /*1 border: 1px solid rgba(51, 51, 51, 0.3);*/
+    /*1 border-radius: 14px;*/
+    /*!*width: inherit;*!*/
+    /*1 background: #EFEFEF;*/
+    width: 989px;
+    height: 50px;
+    /* left: 219px; */
+    /* top: 145px; */
+    background: #F5F6F8;
+    border-radius: 14px;
 }
 
-.postDisplay{
-    position: absolute;
-    width: 1210px;
-    height: 376px;
-    left: 188px;
-    top: 314px;
 
-    background:#FFFFFF;
-    border-radius: 45px;
+.postDisplay{
+
 }
 
 .postDisplay1{
-    margin: 88px 0px 60px 125px;
-    width: 913px;
-    background: #FFFFFF;
-    border-radius: 45px;
+    width: 1041px;
+    padding: 25px;
+    left: 188px;
+    top: 314px;
+    background: white;
+    border-radius: 14px;
+    margin: auto;
+}
+
+.titleRow{
+    display: flex;
+    justify-content: space-between;
 }
 
 .postDisplay1 p{
-    margin: 8px 0px 90px 60px;
+    font-family: 'Montserrat';
+    /*1 font-style: normal;*/
+    /*1 font-weight: 500;*/
+    /*1 font-size: 20px;*/
+    /*1 line-height: 21px;*/
+
+    /*margin: 0px 0px 0px 45px;*/
+    /* or 150% */
+
+
+    color: #606165;
+}
+.postDisplay1 h1{
+    font-family: 'Montserrat';
+    font-style: normal;
+    /*font-weight: 600;*/
+    font-size: 30px;
+    /*line-height: 24px;*/
+
+    color: #606165;
 }
 
 .postDisplay1 hr{
-    /*border-style: none;*/
-    width: 90%;
-    margin: -80px 0 0 40px;
+    margin: 10px 0
 }
 .like_Comment{
     display: flex;
+    gap: 20px;
 }
+
 
                                  /*dropdown start*/
 .dropdown {
+
     position: relative;
     display: inline-block;
-    float: right;
-    margin: -120px 30px 0 0;
 }
 
 .dropdown-content {
@@ -100,3 +165,43 @@
     display: block;
 }
                                     /*dropdown end*/
+
+                                    /*comment part*/
+ .commentBody textarea{
+     width: 932px;
+     height: 50px;
+     font-size: 25px;
+     /*left: 208px;*/
+     /*top: 620px;*/
+     background: #F5F6F8;
+     border-radius: 14px;
+ }
+.commentBody{
+    display: flex;
+    /* width: 100%; */
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.subButton
+{
+    width: 48px;
+    height: 55px;
+/*    width: 54px;*/
+/*    height: 54px;*/
+/*    !*background:url("https://cdn-icons-png.flaticon.com/512/3682/3682321.png") fixed center 10px ;*!*/
+/*    !*background:url("send2.png") no-repeat fixed center;*!*/
+}
+
+.recentDis h4{
+    font-family: 'Montserrat';
+    font-style: normal;
+    /*font-weight: 400;*/
+    font-size: 25px;
+    /*line-height: 22px;*/
+    /* identical to box height */
+
+
+    color: #606165;
+}

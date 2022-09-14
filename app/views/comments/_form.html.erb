@@ -1,13 +1,25 @@
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
+<%= form_with model: [@article, @article.comments.build] do |form| %>
+  <!--  <p>-->
+  <!--    <%#= form.label :commenter %><br>-->
+  <%#= form.text_field :commenter %>
+  <!--  </p>-->
+  <div class="commentBody">
+    <div>
+        <%= form.text_area :body %>
+
+    </div>
+    <div class="subButton">
+
+      <%#= form.submit "submit"%>
+      <%= button_tag(class: "btn btn-primary btn-lg", type: "submit", style: "background-color: #EAF4FF") do %>
+        <%= image_tag "send2.png" %>
+      <% end %>
+      <%#= form.image %>
+
+      <%#= link_to(image_tag("send.png", class: 'image-responsive'), root_path,  :method => :get) %>
+      <%#= form.submit class:"btnWithImg" %>
+    </div>
+  </div>
+
+
 <% end %>

@@ -2,6 +2,9 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.order(id: :desc)
     @article1 = Article.new
+    # def last_comment
+    #   comments.last.pluck("body")
+    # end
   end
 
   def show

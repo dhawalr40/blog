@@ -1,6 +1,30 @@
-#p0 { text-indent: 15em; }
+/*#p0 { text-indent: 15em; }*/
+
+h1{
+
+    font-family: 'Montserrat';
+    font-style: normal;
 
 
-#p1 { text-indent: 15em;
+    color: #606165;
 }
+h2{
+
+    font-family: 'Montserrat';
+
+    /* or 150% */
+
+
+    color: #606165;
+
+}
+h3{
+    font-family: 'Montserrat';
+    font-style: normal;
+
+
+    color: rgba(96, 97, 101, 0.6);
+}
+/*#p1 { text-indent: 15em;*/
+/*}*/
 
