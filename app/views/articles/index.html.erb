@@ -14,6 +14,9 @@
         <div class="titleRow">
           <div>
             <h1><%= article.title %></h1>
+            <div>
+              <p> <%= time_ago_in_words(article.created_at) %> ago </p>
+            </div>
           </div>
           <div class="dropdown">
             <span>...</span>
@@ -31,14 +34,19 @@
         <div>
           <p><%= article.body %></p>
         </div>
+        <div class="countComent">
+            <p>224 Like </p>
+            <p> <%= article.comments.count %></p>
+            <p>comment</p>
+        </div>
 
         <hr>
         <div class="like_Comment">
-          <div>
+          <div class="likeIcon">
             <%= image_tag("heart.png", size: "16x10", alt: "Edit Entry") %>
             Like
           </div>
-          <div>
+          <div class="commentIcon">
             <%= image_tag("comment.png", size: "16x10", alt: "Edit Entry") %>
             <%= link_to "comment", article %>
           </div>

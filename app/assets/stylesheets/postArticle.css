@@ -170,7 +170,7 @@
  .commentBody textarea{
      width: 932px;
      height: 50px;
-     font-size: 25px;
+     /*font-size: 25px;*/
      /*left: 208px;*/
      /*top: 620px;*/
      background: #F5F6F8;
@@ -204,4 +204,19 @@
 
 
     color: #606165;
+}
+
+.countComent{
+    display: flex;
+    gap: 10px;
+}
+
+.likeIcon img{
+    width: 20px;
+    height: 20px;
+}
+
+.commentIcon img{
+    width: 20px;
+    height: 20px;
 }
