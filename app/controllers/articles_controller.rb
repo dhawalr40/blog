@@ -1,10 +1,7 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.order(id: :desc)
+    @articles = current_user.articles.order(id: :desc)
     @article1 = Article.new
-    # def last_comment
-    #   comments.last.pluck("body")
-    # end
   end
 
   def show
@@ -17,6 +14,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user_id = current_user.id
 
     if @article.save
       redirect_to root_path

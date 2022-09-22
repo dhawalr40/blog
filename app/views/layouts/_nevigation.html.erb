@@ -1,6 +1,6 @@
 <nav >
   <div class="topView">
-    <div >
+    <div class="header_content">
       <%= image_tag("Vector.png") %>
       <p1> Maze</p1>
     </div>
@@ -11,5 +11,13 @@
       <input class="sreachIcon" type="text" placeholder="Sreach for something here...">
     </div>
     <!--    <hr style="clear:both;"/>-->
+    <% if user_signed_in? %>
+    <div class="headerIcon">
+      <%= current_user.firstname %>
+      <%= current_user.lastname %>
+      <%= image_tag("robin.jpeg",size: "56x56") %>
+    </div>
+      <% end %>
   </div>
+
 </nav>

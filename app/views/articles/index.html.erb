@@ -1,78 +1,95 @@
-<div class="mainbody">
-  <%= render 'layouts/nevigation' %>
-  <div class="innerMain">
-    <br>
-    <div class="postBlock">
-      <%= render "form", article: @article1 %>
-    </div>
-    <!--  postbody-->
-    <br>
+<%= render 'layouts/nevigation' %>
+<br>
+<div class="innerMain">
+  <br>
+  <div class="postBlock">
+    <%= render "form", article: @article1 %>
+  </div>
+  <!--postbody-->
+  <br>
 
 
-    <% @articles.each do |article| %>
-      <div class="postDisplay1">
-        <div class="titleRow">
-          <div>
-            <h1><%= article.title %></h1>
-            <div>
-              <p> <%= time_ago_in_words(article.created_at) %> ago </p>
-            </div>
-          </div>
-          <div class="dropdown">
-            <span>...</span>
-            <div class="dropdown-content">
-              <p> <%= link_to "Edit", edit_article_path(article) %></p>
-              <p>
-                <%= link_to "Destroy", article_path(article), data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Are you sure?"
-                } %>
-              </p>
-            </div>
-          </div>
-        </div>
+  <% @articles.each do |article| %>
+    <div class="postDisplay1">
+      <div class="titleRow">
         <div>
-          <p><%= article.body %></p>
-        </div>
-        <div class="countComent">
-            <p>224 Like </p>
-            <p> <%= article.comments.count %></p>
-            <p>comment</p>
-        </div>
-
-        <hr>
-        <div class="like_Comment">
-          <div class="likeIcon">
-            <%= image_tag("heart.png", size: "16x10", alt: "Edit Entry") %>
-            Like
-          </div>
-          <div class="commentIcon">
-            <%= image_tag("comment.png", size: "16x10", alt: "Edit Entry") %>
-            <%= link_to "comment", article %>
+          <h1><%= article.title %></h1>
+          <div>
+            <p> <%= time_ago_in_words(article.created_at) %> ago </p>
           </div>
         </div>
-        <hr>
-        <!--commentPost-->
-
-        <% @article = article %>
-        <%= render 'comments/form' %>
-        <br>
-        <div class="recentDis">
-          <h4>
-            <%=article.comments.order('created_at DESC').first&.body %>
-          </h4>
-
+        <div class="dropdown">
+          <span>...</span>
+          <div class="dropdown-content">
+            <p> <%= link_to "Edit", edit_article_path(article) %></p>
+            <p>
+              <%= link_to "Destroy", article_path(article), data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+              } %>
+            </p>
+          </div>
         </div>
       </div>
+      <div>
+        <p><%= link_to article.body, article %></p>
+      </div>
+      <div class="countComent">
+
+        <p> <%= article.likes.count %> Like </p>
+        <p> <%= article.comments.count %></p>
+        <p>comment</p>
+      </div>
+
+      <hr>
+      <div class="like_Comment">
+        <div class="likeIcon">
+            <%= image_tag("heart.png", size: "16x10", alt: "Edit Entry") %>
+          <% pre_like = article.likes.find { |like| like.user_id == current_user.id } %>
+          <% if pre_like %>
+            <%= button_to 'Unlike', article_like_path(article, pre_like), method: :delete %>
+          <% else %>
+            <%= button_to 'Like', article_likes_path(article), method: :post %>
+          <% end %>
+        </div>
+        <div class="commentIcon">
+          <%= image_tag("comment.png", size: "16x10", alt: "Edit Entry") %>
+          <%= link_to "comment", article %>
+        </div>
+      </div>
+      <hr>
+      <!--commentPost-->
+
+      <% @article = article %>
+      <%= render 'comments/form' %>
       <br>
-    <% end %>
+      <div class="recentDis">
+        <h4>
+          <%= article.comments.order('created_at DESC').first&.body %>
+        </h4>
 
-    <!--postbodt end-->
+      </div>
+    </div>
+    <br>
+  <% end %>
 
-  </div>
+  <!--postbodt end-->
 
 </div>
 
+<!--side nav bar-->
+
+<div class="left">
+  <div class="sidebar">
+    <a class="active" href="http://localhost:3000"> <%= image_tag("feed.png") %> Feed</a>
+    <a> <%= image_tag("profile.png") %> Profile</a>
+    <div class="side-log-nav">
+      <%= image_tag("logout.png") %>
+      <%= link_to "sign out", destroy_user_session_path, data: { "turbo-method": :delete } %>
+    </div>
+  </div>
+</div>
+<!--side_bar_end-->
 
 
 

@@ -4,14 +4,14 @@
   <%#= form.text_field :commenter %>
   <!--  </p>-->
   <div class="commentBody">
-    <div>
-        <%= form.text_area :body %>
+    <div style="width: 100%">
+        <%= form.text_area :body, placeholder:"Write a comment" %>
 
     </div>
     <div class="subButton">
 
       <%#= form.submit "submit"%>
-      <%= button_tag(class: "btn btn-primary btn-lg", type: "submit", style: "background-color: #EAF4FF") do %>
+      <%= button_tag(class: "btn btn-primary btn -lg", type: "submit", style: "background-color: #EAF4FF") do %>
         <%= image_tag "send2.png" %>
       <% end %>
       <%#= form.image %>

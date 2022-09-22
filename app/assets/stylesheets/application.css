@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+.topView {
+    display: flex;
+    height: 70px;
+    justify-content: space-around;
+    align-items: center;
+}
