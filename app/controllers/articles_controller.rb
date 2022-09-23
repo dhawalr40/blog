@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = current_user.articles.order(id: :desc)
+    @articles = Article.all.order(id: :desc)
     @article1 = Article.new
   end
 
@@ -46,6 +46,6 @@ class ArticlesController < ApplicationController
   
   private
     def article_params
-      params.require(:article).permit(:title, :body)
+      params.require(:article).permit(:title, :body, :status)
     end
 end

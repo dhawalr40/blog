@@ -1,6 +1,10 @@
 <%= form_with model: article do |form| %>
 
   <div class="inner1">
+    <div>
+      <%= form.label :status %><br>
+      <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    </div>
       <%#= form.label :body %>
       <%= form.text_area :body, placeholder:"Whats happening ?..." %>
 
