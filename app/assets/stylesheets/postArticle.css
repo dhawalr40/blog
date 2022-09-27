@@ -45,11 +45,11 @@
     align-items: center;
 }
 
-.inner1 textarea{
+.inner1 input{
     ont-family: 'Montserrat';
     padding: 9px;
     font-size: 20px;
-    width: 97%;
+    width: 85%;
     height: 50px;
     /* left: 219px; */
     /* top: 145px; */
@@ -191,7 +191,7 @@
                                     /*dropdown end*/
 
                                     /*comment part*/
- .commentBody textarea{
+ .commentBody input{
      width: 97%;
      height: 50px;
      padding: 12px;
@@ -211,8 +211,9 @@
 
 .subButton
 {
-    width: 48px;
-    height: 55px;
+    display: grid;
+    width: 50px;
+    height: 50px;
 /*    width: 54px;*/
 /*    height: 54px;*/
 /*    !*background:url("https://cdn-icons-png.flaticon.com/512/3682/3682321.png") fixed center 10px ;*!*/

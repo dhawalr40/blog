@@ -7,7 +7,7 @@
     <div class="commentinner">
       <div>
         <div class="commentContent">
-          <h1><%= @article.title %></h1>
+          <h1><%= @article.user.firstname %> <%= @article.user.lastname %></h1>
 
           <div class="dropdown">
             <span>...</span>
@@ -55,6 +55,7 @@
       <hr>
       <div class="printComment">
         <%= render @article.comments %>
+
 <!--        <%#= time_ago_in_words(@article.comments.created_at) %> ago-->
       </div>
     </div>

@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @articles = Article.all.order(id: :desc)
     @article1 = Article.new
+    @user = current_user
   end
 
   def show

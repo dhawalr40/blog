@@ -13,7 +13,7 @@ module Visible
     end
   end
 
-  def private?
-    status == 'private'
-  end
+  # def private?
+  #   status == 'private'
+  # end
 end

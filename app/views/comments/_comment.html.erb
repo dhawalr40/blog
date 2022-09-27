@@ -5,11 +5,14 @@
 
   <!--  <strong>Comment:</strong>-->
 <div class="comment-print-body">
+
   <%= comment.body %>
   <%= link_to "Destroy", [comment.article, comment], data: {
     turbo_method: :delete,
     turbo_confirm: "Are you sure?"
   } %>
+
+
 </div>
 
 <!--  <%#= time_ago_in_words(comment.created_at) %> ago-->

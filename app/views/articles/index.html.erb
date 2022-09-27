@@ -9,16 +9,17 @@
   <br>
 
 
-  <% @articles.each do |article| %>
-    <%# unless article.private? %>
-    <% if (current_user.has_role? :admin) %>
+
+  <%# unless article.private? %>
+  <% if (current_user.has_role? :admin) %>
+    <% @articles.each do |article| %>
       <div class="postDisplay1">
         <div class="titleRow">
           <div>
             <h1><%= article.user.firstname %> <%= article.user.lastname %> </h1>
-            <%= article.status %>
+
             <div>
-              <p> <%= time_ago_in_words(article.created_at) %> ago </p>
+              <p> <%= article.status %> , <%= time_ago_in_words(article.created_at) %> ago </p>
             </div>
           </div>
           <div class="dropdown">
@@ -74,15 +75,18 @@
         </div>
       </div>
       <br>
-    <% else %>
-      <% @articles.where(status: :public).each do |article| %>
+    <% end %>
+  <% else %>
+    <% @articles.each do |article| %>
+      <!--      or(@articles.where(user: :current_user))-->
+      <% if article.status == "public" || article.user_id == current_user.id %>
         <div class="postDisplay1">
           <div class="titleRow">
             <div>
               <h1><%= article.user.firstname %> <%= article.user.lastname %> </h1>
-              <%= article.status %>
+
               <div>
-                <p> <%= time_ago_in_words(article.created_at) %> ago </p>
+                <p> <%= article.status %> , <%= time_ago_in_words(article.created_at) %> ago </p>
               </div>
             </div>
             <% if article.user_id == current_user.id %>
@@ -141,12 +145,14 @@
           </div>
         </div>
         <br>
-
       <% end %>
-      <%# where %>
-    <% end %>
 
+
+    <% end %>
+    <%# where %>
   <% end %>
+
+
   <%# end %>
 
   <!--postbodt end-->
