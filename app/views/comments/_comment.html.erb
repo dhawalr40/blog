@@ -7,10 +7,23 @@
 <div class="comment-print-body">
 
   <%= comment.body %>
-  <%= link_to "Destroy", [comment.article, comment], data: {
-    turbo_method: :delete,
-    turbo_confirm: "Are you sure?"
-  } %>
+
+  <div>
+      <div class="dropdown">
+        <span>...</span>
+        <div class="dropdown-content">
+          <%= link_to "Destroy", [comment.article, comment], data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you want to delete comment?"
+          } %>
+<!--          <a href="#">Link 2</a>-->
+<!--          <a href="#">Link 3</a>-->
+        </div>
+      </div>
+
+  </div>
+
+
 
 
 </div>

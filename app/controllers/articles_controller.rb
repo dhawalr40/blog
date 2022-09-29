@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all.order(id: :desc)
     @article1 = Article.new
-    @user = current_user
+    @user = User.all
   end
 
   def show

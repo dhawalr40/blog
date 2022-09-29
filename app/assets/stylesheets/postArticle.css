@@ -16,7 +16,7 @@
     margin: auto;
      /*display: flex; */
     /* position: absolute; */
-    width: 76%;
+    width: 60%;
     height: auto;
     /* left: 62%; */
     /* top: 96px; */
@@ -79,15 +79,15 @@
 }
 .inner2_content{
     display: flex;
-    gap: 25px;
+    gap: 33px;
     align-items: baseline;
-    width: 29%;
+    width: 37%;
     justify-content: flex-end;
 
 }
 
 .inner3{
-    width: 13%;
+    width: 17%;
 }
 
 .postIn{
@@ -251,6 +251,16 @@
 .left{
     position: absolute;
     top: 10%;
+
     /*border: 1px solid;*/
     width: 190px;
+}
+
+.right{
+    position: absolute;
+    top: 10%;
+    /* color: yellow; */
+    /*background: red;*/
+    width: 190px;
+    right: 85px;
 }

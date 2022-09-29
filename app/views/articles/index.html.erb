@@ -165,15 +165,26 @@
   <div class="sidebar">
     <a class="active" href="http://localhost:3000"> <%= image_tag("feed.png") %> Feed</a>
     <a href="http://localhost:3000/users/edit"> <%= image_tag("profile.png") %> Profile</a>
+    <% if (current_user.has_role? :admin) %>
+      <a> Manage User</a>
+    <% end %>
+
     <div class="side-log-nav">
-      <%= image_tag("logout.png") %>
-      <%= link_to "sign out", destroy_user_session_path, data: { "turbo-method": :delete } %>
+      <%= image_tag("logout.png") %> <%= link_to "sign out", destroy_user_session_path, data: { "turbo-method": :delete } %>
     </div>
   </div>
 </div>
 <!--side_bar_end-->
 
-
+<% if (current_user.has_role? :admin) %>
+  <div class="right">
+    <div class="sidebar">
+      <% @user.each do |user| %>
+        <a> <%= image_tag("Vector.png") %> <%= user.firstname %> <%= user.lastname %></a>
+      <% end %>
+    </div>
+  </div>
+<% end %>
 
 <!--<div class="row">-->
 <!--  <div style="background-color: rgba(115,14,21,0.57)" class="col-6">1</div>-->

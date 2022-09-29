@@ -10,7 +10,7 @@
     </div>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= render "devise/shared/error_messages" %>
 
       <div class="signup-detial">
         <div class="rightSignupBox">
@@ -20,11 +20,31 @@
             <%= f.text_field :firstname %>
           </div>
 
+          <div>
+            <%= f.label :lastname %>
+            <br>
+            <%= f.text_field :lastname %>
+          </div>
+        </div>
+
+        <div class="leftSignupBox">
+
           <div class="field">
             <%= f.label :email %>
             <br/>
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           </div>
+
+          <div>
+            <%= f.label :phone %>
+            <br>
+            <%= f.text_field :phone %>
+
+          </div>
+
+        </div>
+
+        <div class="lastSignupBox">
 
           <div class="field">
             <%= f.label :password %>
@@ -34,21 +54,6 @@
             <br/>
             <%= f.password_field :password, autocomplete: "new-password" %>
           </div>
-        </div>
-
-        <div class="leftSignupBox">
-          <div>
-            <%= f.label :lastname %>
-            <br>
-            <%= f.text_field :lastname %>
-          </div>
-
-          <div>
-            <%= f.label :phone %>
-            <br>
-            <%= f.text_field :phone %>
-          </div>
-
 
           <div class="field">
             <%= f.label :password_confirmation %>
@@ -57,6 +62,7 @@
           </div>
 
         </div>
+
       </div>
 
       <div class="actions sign-up-last">

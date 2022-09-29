@@ -54,7 +54,7 @@
       <h3>Comments</h3>
       <hr>
       <div class="printComment">
-        <%= render @article.comments %>
+        <%= render @article.comments.select(&:persisted?)  %>
 
 <!--        <%#= time_ago_in_words(@article.comments.created_at) %> ago-->
       </div>

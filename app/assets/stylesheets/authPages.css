@@ -10,7 +10,7 @@
     width: 100%;
     height: 100%;
     /*background: #353747;*/
-    border-radius: 20px;
+    /*border-radius: 20px;*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -76,8 +76,11 @@
 
 .signup-detial{
     display: flex;
-    justify-content: space-around;
-    color: white;
+     color: white;
+    height: 400px;
+    padding-left: 475px;
+    gap: 75px;
+    flex-direction: column;
 }
 
 .signup-detial input{
@@ -88,19 +91,26 @@
 }
 
 .rightSignupBox{
-    width: 55%;
-    height: 350px;
+    width: 95%;
+    /*height: 350px;*/
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    /*flex-direction: column;*/
+    /*align-items: flex-end;*/
     justify-content: space-between;
 }
 
 .leftSignupBox{
     display: flex;
-    flex-direction: column;
+    width: 95%;
+    /*flex-direction: column;*/
     justify-content: space-between;
-    height: 350px;
+    /*height: 350px;*/
+}
+
+.lastSignupBox{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
 }
 
 .sign-up-content{

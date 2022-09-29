@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   after_create :assign_default_role
 
+  # validates :phone, presence: true, length: { minimum: 10 }
+
   def assign_default_role
     self.add_role(:newuser) if self.roles.blank?
   end
