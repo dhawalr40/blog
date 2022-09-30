@@ -56,7 +56,6 @@
       <div class="printComment">
         <%= render @article.comments.select(&:persisted?)  %>
 
-<!--        <%#= time_ago_in_words(@article.comments.created_at) %> ago-->
       </div>
     </div>
     <br>

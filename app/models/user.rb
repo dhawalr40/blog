@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   rolify
   # resourcify
-
+  has_many :comments,dependent: :destroy
   has_many :articles, dependent: :destroy
   has_many :likes, dependent: :destroy
 
