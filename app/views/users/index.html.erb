@@ -1,0 +1,18 @@
+<%= render 'layouts/nevigation' %>
+
+<div class="innerMain">
+  <% @users.each do |user| %>
+    <div class="user-display">
+      <a> <%= image_tag("Vector.png") %> <%= user.firstname %> <%= user.lastname %></a>
+      <strong>Access lock :</strong>
+      <%= user.access_locked? %>
+      <% if user.access_locked? %>
+        <%= button_to "activate", ban_user_path(user),:method => :patch %>
+      <% else %>
+        <%= button_to "deactivate", ban_user_path(user),:method => :patch %>
+      <% end %>
+    </div>
+
+    <br>
+  <% end %>
+</div>

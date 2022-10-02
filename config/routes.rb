@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
+
+  resources :users,only: [:index] do
+    member do
+      patch :ban
+    end
+  end
+
   devise_for :users
   root "articles#index"
 
   resources :articles do
     resources :comments
+    get "/Manage", to: "articles#manageUser"
+    member do
+      patch :deactivate
+    end
   end
   resources :articles do
     resources :likes,only: [:create, :destroy]

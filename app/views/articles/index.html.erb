@@ -167,7 +167,7 @@
     <a class="active" href="http://localhost:3000"> <%= image_tag("feed.png") %> Feed</a>
     <a href="http://localhost:3000/users/edit"> <%= image_tag("profile.png") %> Profile</a>
     <% if (current_user.has_role? :admin) %>
-      <a> Manage User</a>
+      <%= link_to "Manage",users_path %>
     <% end %>
 
     <div class="side-log-nav">
