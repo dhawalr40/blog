@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :users,only: [:index] do
+  resources :users,only: [:index,:create] do
+    get "/new", to: "users#new"
     member do
       patch :ban
     end
