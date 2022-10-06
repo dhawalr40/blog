@@ -1,0 +1,32 @@
+.report-innerMain{
+    display: flex;
+    width: 76%;
+    height: auto;
+    background: #F5F6F8;
+    border-radius: 14px;
+    /*margin: auto;*/
+    justify-content: space-between;
+}
+.report-print{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white ;
+    width: 25%;
+    height: 85%;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.report-img{
+    height: 30%;
+    width: 100%;
+}
+
+.report-img img{
+    width: 15%;
+    display: block;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    margin: auto;
+}

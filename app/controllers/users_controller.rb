@@ -30,6 +30,21 @@ class UsersController < ApplicationController
     redirect_to users_path,notice: "User access lock: #{@user.access_locked?}"
   end
 
+  def show
+    @articles = Article.all
+    @comment = Comment.all
+  end
+
+  def countpost
+    @users= User.all
+    @articles = Article.all
+    @comment = Comment.all
+  end
+
+  def alluser
+    @users = User.all
+  end
+
   private
   def users_params
     params.require(:user).permit( :firstname, :lastname, :phone, :email, :password)

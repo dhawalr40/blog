@@ -170,6 +170,7 @@
       <%#= image_tag("manage2.png") %>
       <%#= link_to "Manage",users_path %>
       <a href="/users"><%= image_tag("manage2.png") %> manage </a>
+      <%= link_to "report", user_show_path(@user) %>
     <% end %>
 
     <div class="side-log-nav">

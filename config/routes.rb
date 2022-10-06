@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   resources :users,only: [:index,:create] do
     get "/new", to: "users#new"
+    get "/show", to: "users#show"
+    get "/countpost", to: "users#countpost"
+    get "/alluser", to: "users#alluser"
     member do
       patch :ban
     end
@@ -12,10 +15,6 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments
-    get "/Manage", to: "articles#manageUser"
-    member do
-      patch :deactivate
-    end
   end
   resources :articles do
     resources :likes,only: [:create, :destroy]
