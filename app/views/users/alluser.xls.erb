@@ -1,0 +1,20 @@
+<table >
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Post count</th>
+    <th>Comment count</th>
+    <th>like count</th>
+  </tr>
+  <% @users.each do |user| %>
+    <% if user.articles.count > 3 %>
+    <tr>
+      <td><%= user.firstname %></td>
+      <td><%= user.lastname %></td>
+      <td><%= user.articles.count %></td>
+      <td><%= user.comments.count %></td>
+      <td><%= user.likes.count %></td>
+    </tr>
+      <% end %>
+  <% end %>
+</table>

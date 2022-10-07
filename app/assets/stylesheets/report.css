@@ -30,3 +30,13 @@
     /* margin-right: auto; */
     margin: auto;
 }
+.download-file{
+    display: flex;
+    justify-content: space-between;
+    /*background: palevioletred;*/
+    width: 40%;
+}
+
+.download-file a{
+    text-decoration: none;
+}

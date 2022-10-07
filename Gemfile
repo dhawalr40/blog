@@ -56,6 +56,8 @@ gem 'awesome_print', '~> 1.8'
 gem 'caxlsx'
 gem 'caxlsx_rails'
 
+gem 'rubyzip'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -43,10 +43,6 @@ class UsersController < ApplicationController
 
   def alluser
     @users = User.all
-    respond_to do |format|
-      format.csv
-      format.xlsx
-      end
   end
 
   private

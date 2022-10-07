@@ -30,8 +30,9 @@
       </div>
       <h1>User</h1>
       <p>all post and comment with there likes</p>
-      <div>
+      <div class="download-file">
         <%= link_to "CSV", user_countpost_path(format: :csv) %>
+        <%= link_to "XLSX", user_countpost_path(format: :xls) %>
       </div>
     </div>
 
@@ -42,9 +43,10 @@
       </div>
       <h1>All Users</h1>
       <p>Having more than 10 posts.users</p>
-      <div>
+      <div class="download-file">
         <%= link_to "CSV", user_alluser_path(format: :csv) %>
-        <%= link_to "XLSX", user_alluser_path(format: :xlsx) %>
+        <%= link_to "XLSX", user_alluser_path(format: :xls) %>
+
       </div>
     </div>
 
@@ -55,8 +57,9 @@
       </div>
       <h1>Postwise Report</h1>
       <p>Title/description, comments, likes</p>
-      <div>
+      <div class="download-file">
         <%= link_to "CSV", user_show_path(format: :csv) %>
+        <%= link_to "XLSX", user_show_path(format: :xls) %>
       </div>
     </div>
 
