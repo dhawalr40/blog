@@ -10,13 +10,15 @@
 
 }
 
-
+.main-body{
+    display: flex;
+}
 
 .innerMain{
     margin: auto;
      /*display: flex; */
     /* position: absolute; */
-    width: 60%;
+    width: 66%;
     height: auto;
     /* left: 62%; */
     /* top: 96px; */
@@ -249,16 +251,15 @@
 
                                /*sihn in sign out*/
 .left{
-    position: absolute;
-    top: 10%;
-
+    /*position: absolute;*/
+    /*top: 10%;*/
     /*border: 1px solid;*/
-    width: 190px;
+    /*width: 190px;*/
 }
 
 .right{
     position: absolute;
-    top: 10%;
+    /*top: 10%;*/
     /* color: yellow; */
     /*background: red;*/
     width: 190px;

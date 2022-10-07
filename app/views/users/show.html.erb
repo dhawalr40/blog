@@ -1,5 +1,8 @@
 <%= render 'layouts/nevigation' %>
 <br>
+<br>
+<br>
+<br>
 <!--</div>-->
 
 <div class="User-all-display">
@@ -41,6 +44,7 @@
       <p>Having more than 10 posts.users</p>
       <div>
         <%= link_to "CSV", user_alluser_path(format: :csv) %>
+        <%= link_to "XLSX", user_alluser_path(format: :xlsx) %>
       </div>
     </div>
 
