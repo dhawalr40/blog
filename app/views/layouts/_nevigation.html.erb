@@ -1,8 +1,8 @@
 <nav >
   <div class="topView">
-    <div >
+    <div class="header_content">
       <%= image_tag("Vector.png") %>
-      <p1> Maze</p1>
+      <a href="http://localhost:3000"> Maze</a>
     </div>
 
     <%#= link_to 'MAZE', new_article_path %>
@@ -11,5 +11,14 @@
       <input class="sreachIcon" type="text" placeholder="Sreach for something here...">
     </div>
     <!--    <hr style="clear:both;"/>-->
+    <% if user_signed_in? %>
+    <div class="headerIcon">
+      <%= current_user.firstname %>
+      <%= current_user.lastname %>
+      <%= image_tag("https://avatars.githubusercontent.com/u/95081326?v=4",size: "56x56") %>
+      
+    </div>
+      <% end %>
   </div>
+
 </nav>

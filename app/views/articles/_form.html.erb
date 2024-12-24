@@ -1,8 +1,12 @@
 <%= form_with model: article do |form| %>
 
   <div class="inner1">
+    <div>
+      <%= form.label :status %><br>
+      <%= form.select :status, ['public', 'private'], selected: 'public' %>
+    </div>
       <%#= form.label :body %>
-      <%= form.text_area :body,class:"postIn"%>
+      <%= form.text_field :body, placeholder:"Whats happening ?..." %>
 
       <% article.errors.full_messages_for(:body).each do |message| %>
         <div><%= message %></div>
@@ -11,17 +15,17 @@
 
   <div class="inner2">
     <div class="inner2_content">
-      <div>
+      <div style="width: 25%">
         <%= image_tag "video.png"%>
         <spam>live video</spam>
       </div>
 
-      <div>
+      <div style="width: auto">
         <%= image_tag "photo.png"%>
         <spam>photo/Video</spam>
       </div>
 
-      <div>
+      <div style="width: auto">
         <%= image_tag "smile.png"%>
         <spam>Feeling</spam>
       </div>

@@ -1,11 +1,13 @@
+
+<%= render 'layouts/nevigation' %>
+<br>
 <div class="pageIIbody ">
-  <%= render 'layouts/nevigation' %>
   <div class="commentOutter">
     <br>
     <div class="commentinner">
       <div>
         <div class="commentContent">
-          <h1><%= @article.title %></h1>
+          <h1><%= @article.user.firstname %> <%= @article.user.lastname %></h1>
 
           <div class="dropdown">
             <span>...</span>
@@ -26,9 +28,17 @@
       </div>
       <hr>
       <div class="setLike">
-        <div>
+        <div class="likecount">
           <%= image_tag("heart.png") %>
-          like
+          <%#= button_to 'Like', article_likes_path(@article), method: :post %>
+
+<!--          <p><%#= @article.likes.count %> <%#= (@article.likes.count) == 1 ? 'Like' : 'Likes'%></p>-->
+          <% pre_like = @article.likes.find { |like| like.user_id == current_user.id} %>
+          <% if pre_like %>
+            <%= button_to 'Unlike', article_like_path(@article, pre_like), method: :delete %>
+          <% else %>
+          <%= button_to 'Like', article_likes_path(@article), method: :post %>
+          <% end %>
         </div>
         <div>
           <%= image_tag("comment.png") %>
@@ -44,7 +54,8 @@
       <h3>Comments</h3>
       <hr>
       <div class="printComment">
-        <%= render @article.comments %>
+        <%= render @article.comments.select(&:persisted?)  %>
+
       </div>
     </div>
     <br>

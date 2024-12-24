@@ -1,31 +1,38 @@
 
 .mainbody{
-    position: relative;
-    width: 1440px;
-    height: 1144px;
-
-    background:#FFFFFF;;
+    margin: auto;
+    /*position: relative; *!*/
+    width: 80%;
+    /* height: 1144px; */
+    background: #FFFFFF;
     border-radius: 20px;
-    left: 150px;
+    /*!* left: 150px;*/
+
+}
+
+.main-body{
+    display: flex;
 }
 
 .innerMain{
-    position: absolute;
-    width: 1099px;
+    margin: auto;
+     /*display: flex; */
+    /* position: absolute; */
+    width: 66%;
     height: auto;
-    left: 170px;
-    top: 96px;
-
-    background: #F9FAFB;
+    /* left: 62%; */
+    /* top: 96px; */
+    background: #F5F6F8;
     border-radius: 14px;
+    /*!* flex-direction: column;*/
 }
 
 .postBlock{
     margin: auto;
-    width: 1041px;
+    width: 93%;
      height: 160px;
-    left: 188px;
-    top: 125px;
+    /*left: 188px;*/
+    /*top: 125px;*/
     background: #FFFFFF;
     border-radius: 14px;
 }
@@ -40,13 +47,17 @@
     align-items: center;
 }
 
-.inner1 textarea{
-    width: 989px;
+.inner1 input{
+    ont-family: 'Montserrat';
+    padding: 9px;
+    font-size: 20px;
+    width: 85%;
     height: 50px;
-    left: 219px;
-    top: 145px;
+    /* left: 219px; */
+    /* top: 145px; */
     background: #F5F6F8;
     border-radius: 14px;
+    align-items: center;
 }
 
 .inner2{
@@ -58,25 +69,27 @@
 }
 
 .inner2_btn{
+    border: none;
     background: #377DFF;
     border-radius: 10px;
     width: 151px;
     height: 50px;
     left: 1057px;
     top: 220px;
-
+    color: white;
+    font-size: 24px;
 }
 .inner2_content{
     display: flex;
-    gap: 25px;
+    gap: 33px;
     align-items: baseline;
-    width: 370px;
+    width: 37%;
     justify-content: flex-end;
 
 }
 
 .inner3{
-    width: 178px;
+    width: 17%;
 }
 
 .postIn{
@@ -93,12 +106,13 @@
 }
 
 
-.postDisplay{
-
+.postDisplay1 a{
+    color: #606165;
+    text-decoration: none;
 }
 
 .postDisplay1{
-    width: 1041px;
+    width: 93%;
     padding: 25px;
     left: 188px;
     top: 314px;
@@ -143,6 +157,18 @@
     gap: 20px;
 }
 
+.likeIcon{
+    display: flex;
+    align-items: center;
+}
+
+.likeIcon button{
+    border: none;
+    background: white;
+    font-family: Montserrat;
+    color: #606165;
+}
+
 
                                  /*dropdown start*/
 .dropdown {
@@ -167,10 +193,11 @@
                                     /*dropdown end*/
 
                                     /*comment part*/
- .commentBody textarea{
-     width: 932px;
+ .commentBody input{
+     width: 97%;
      height: 50px;
-     font-size: 25px;
+     padding: 12px;
+     /*font-size: 25px;*/
      /*left: 208px;*/
      /*top: 620px;*/
      background: #F5F6F8;
@@ -179,15 +206,16 @@
 .commentBody{
     display: flex;
     /* width: 100%; */
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 
 .subButton
 {
-    width: 48px;
-    height: 55px;
+    display: grid;
+    width: 50px;
+    height: 50px;
 /*    width: 54px;*/
 /*    height: 54px;*/
 /*    !*background:url("https://cdn-icons-png.flaticon.com/512/3682/3682321.png") fixed center 10px ;*!*/
@@ -204,4 +232,36 @@
 
 
     color: #606165;
+}
+
+.countComent{
+    display: flex;
+    gap: 10px;
+}
+
+.likeIcon img{
+    width: 20px;
+    height: 20px;
+}
+
+.commentIcon img{
+    width: 20px;
+    height: 20px;
+}
+
+                               /*sihn in sign out*/
+.left{
+    /*position: absolute;*/
+    /*top: 10%;*/
+    /*border: 1px solid;*/
+    /*width: 190px;*/
+}
+
+.right{
+    position: absolute;
+    /*top: 10%;*/
+    /* color: yellow; */
+    /*background: red;*/
+    width: 190px;
+    right: 85px;
 }

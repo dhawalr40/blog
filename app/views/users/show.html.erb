@@ -1,0 +1,68 @@
+<%= render 'layouts/nevigation' %>
+<br>
+<br>
+<br>
+<br>
+<!--</div>-->
+
+<div class="User-all-display">
+  <div class="user-sidebar">
+    <a href="http://localhost:3000"> <%= image_tag("feed.png") %> Feed</a>
+    <a href="http://localhost:3000/users/edit"> <%= image_tag("profile.png") %> Profile</a>
+    <% if (current_user.has_role? :admin) %>
+      <%#= image_tag("manage2.png") %>
+      <%#= link_to "Manage",users_path %>
+      <a href="/users"><%= image_tag("manage2.png") %> manage </a>
+      <a class="active"> Report</a>
+    <% end %>
+
+    <div class="side-log-nav">
+      <%= image_tag("logout.png") %> <%= link_to "sign out", destroy_user_session_path, data: { "turbo-method": :delete } %>
+    </div>
+  </div>
+  <div class="report-innerMain">
+    <br>
+
+    <div class="report-print">
+      <br>
+      <div class="report-img">
+        <%= image_tag "file-text.svg" %>
+      </div>
+      <h1>User</h1>
+      <p>all post and comment with there likes</p>
+      <div class="download-file">
+        <%= link_to "CSV", user_countpost_path(format: :csv) %>
+        <%= link_to "XLSX", user_countpost_path(format: :xls) %>
+      </div>
+    </div>
+
+    <div class="report-print">
+      <br>
+      <div class="report-img">
+        <%= image_tag "file-text.svg" %>
+      </div>
+      <h1>All Users</h1>
+      <p>Having more than 10 posts.users</p>
+      <div class="download-file">
+        <%= link_to "CSV", user_alluser_path(format: :csv) %>
+        <%= link_to "XLSX", user_alluser_path(format: :xls) %>
+
+      </div>
+    </div>
+
+    <div class="report-print">
+      <br>
+      <div class="report-img">
+        <%= image_tag "file-text.svg" %>
+      </div>
+      <h1>Postwise Report</h1>
+      <p>Title/description, comments, likes</p>
+      <div class="download-file">
+        <%= link_to "CSV", user_show_path(format: :csv) %>
+        <%= link_to "XLSX", user_show_path(format: :xls) %>
+      </div>
+    </div>
+
+    <br>
+  </div>
+</div>

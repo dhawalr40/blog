@@ -1,0 +1,90 @@
+<%#= render 'layouts/nevigation' %>
+<br>
+<div class="User-nav">
+  <div class="Manage-maze">
+    <%= image_tag("Vector.png") %>
+    <a href="http://localhost:3000"> Maze</a>
+  </div>
+  <div class="user-nav-text">
+    <p> User Management</p>
+  </div>
+  <div class="currentUser-manage">
+    <%= current_user.firstname %>
+    <%= current_user.lastname %>
+    <%= image_tag("https://avatars.githubusercontent.com/u/95081326?v=4", size: "56x56") %>
+  </div>
+</div>
+<br>
+
+<div class="User-all-display">
+  <div class="user-sidebar">
+    <a href="http://localhost:3000"> <%= image_tag("feed.png") %> Feed</a>
+    <a href="http://localhost:3000/users/edit"> <%= image_tag("profile.png") %> Profile</a>
+    <% if (current_user.has_role? :admin) %>
+      <%#= image_tag("manage2.png") %>
+      <%#= link_to "Manage",users_path %>
+      <a class="active" href="/users"><%= image_tag("manage.png") %> manage </a>
+    <% end %>
+
+    <div class="side-log-nav">
+      <%= image_tag("logout.png") %> <%= link_to "sign out", destroy_user_session_path, data: { "turbo-method": :delete } %>
+    </div>
+  </div>
+  <div class="user-innerMain">
+    <br>
+    <div style="margin-left:60px ">
+      <h1>Add User</h1>
+    </div>
+
+    <%= form_with url: '/users', method: :post, model: @users do |f| %>
+
+      <div class="user-box-field">
+        <div class="user-name">
+          <div class="name ">
+            <%= f.label :firstname %>
+            <br>
+            <%= f.text_field :firstname %>
+          </div>
+
+          <div>
+            <%= f.label :lastname %>
+            <br>
+            <%= f.text_field :lastname %>
+          </div>
+        </div>
+        <div class="user-email">
+          <div class="field">
+            <%= f.label :email %>
+            <br/>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+
+          <div>
+            <%= f.label :phone %>
+            <br>
+            <%= f.text_field :phone %>
+
+          </div>
+        </div>
+
+        <div class="field user-pass">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <br/>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+    </div>
+      <br>
+      <div class="user-role">
+        <%= f.collection_check_boxes :role_ids, Role.all, :id, :name %>
+
+        <%= f.submit "Create User", class: "btn-primary btn" %>
+      </div>
+    <% end %>
+    <br>
+  </div>
+</div>
+

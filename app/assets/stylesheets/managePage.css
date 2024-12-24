@@ -1,0 +1,181 @@
+.User-nav{
+    display: flex;
+    align-items: baseline;
+}
+
+.Manage-maze{
+    width: 20%;
+    margin-left: 20px;
+}
+
+.Manage-maze img{
+    border-radius: 14px;
+}
+
+.Manage-maze a{
+    font-family: 'Inria Sans';
+    font-style: normal;
+    font-size: 35px;
+    text-decoration: none;
+    color: black;
+}
+
+.user-nav-text{
+    width: 65%;
+}
+.user-nav-text p{
+    font-family: 'Inria Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+}
+
+.currentUser-manage img{
+    border-radius: 14px;
+}
+
+.name-user{
+    width: 30%;
+}
+.phone-margin{
+    width: 25%;
+}
+
+.email-margin{
+    width: 30%;
+}
+
+.text-of-userpage{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.user-display{
+    display: flex;
+    lign-items: center;
+    /*justify-content: space-between;*/
+    background: white;
+    border-radius: 14px;
+    width: 95%;
+    height: 50px;
+    margin: auto;
+    align-items: center;
+    padding: 25px;
+}
+
+.User-all-display{
+    display: flex;
+    /*justify-content: space-around;*/
+}
+
+/*sidebar */
+ .user-sidebar{
+     width: 15%;
+     /* background-color: #f1f1f1; */
+     /* position: fixed; */
+     height: auto;
+     overflow: auto;
+ }
+.user-sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    border-radius: 14px;
+    /*display: flex;*/
+}
+
+/* Active/current link */
+.user-sidebar a.active {
+    background-color: #377DFF;
+    color: white;
+}
+
+/* Links on mouse-over */
+.user-sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+    .user-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .user-sidebar a {float: left;}
+    div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+    .user-sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+
+.side-log-nav{
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+ /*sidebar over*/
+
+ .user-innerMain{
+     width: 76%;
+     height: auto;
+     background: #F5F6F8;
+     border-radius: 14px;
+     margin: auto;
+ }
+
+ .btndanger{
+     border: none;
+     background: rgba(245, 100, 100, 0.15);
+     border-radius: 14px;
+     color: #F56464;
+     width: 120px;
+     height: 35px;
+ }
+ .btnsuccess{
+     border: none;
+     background: rgba(113, 190, 52, 0.15);
+     border-radius: 14px;
+     color: #71BE34;
+     width: 120px;
+     height: 35px;
+ }
+
+ .user-box-field input{
+     border: 1px solid #D1D1D1;
+     border-radius: 5px;
+     width: 358px;
+     height: 48px;
+ }
+
+ .user-email{
+     display: flex;
+     justify-content: space-around;
+ }
+ .user-name{
+     display: flex;
+     justify-content: space-around;
+ }
+ .user-pass{
+     margin-left: 163px;
+ }
+
+ .user-role{
+     margin-left: 163px;
+ }

@@ -1,0 +1,7 @@
+<%= CSV.generate_line(["firstname","lastname","post","comment", "like count"]) %>
+<% @users.each do |user| %>
+<% if user.articles.count > 3 %>
+<%= CSV.generate_line([user.firstname ,user.lastname , user.articles.count,user.comments.count,user.likes.count]) %>
+<% end %>
+<% end %>
+<%= CSV.generate_line(['nil' ,'nil' ,'nil','nil','nil']) %>

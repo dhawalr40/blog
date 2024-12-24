@@ -1,10 +1,41 @@
 <!--<p>-->
 <!--  <strong>Commenter:</strong>-->
-  <%#= comment.commenter %>
+<%#= comment.commenter %>
 <!--</p>-->
 
-<p>
-<!--  <strong>Comment:</strong>-->
-  <%= comment.body %>
-  <hr>
-</p>
+  <!--  <strong>Comment:</strong>-->
+<div class="comment-print-body">
+
+  <div style="width: 80%">
+   <h2><%= comment.user.firstname %> <%= comment.user.lastname %> </h2>
+
+    <p> <%= comment.body %> </p>
+  </div>
+
+
+  <div class="edit-comment">
+    <% if (comment.user_id == current_user.id or current_user.has_role? :admin) %>
+      <div class="dropdown">
+        <span>...</span>
+        <div class="dropdown-content">
+          <%= link_to "Destroy", [comment.article, comment], data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you want to delete comment?"
+          } %>
+<!--          <a href="#">Link 2</a>-->
+<!--          <a href="#">Link 3</a>-->
+        </div>
+      </div>
+      <% end %>
+    <%= time_ago_in_words(comment.created_at) %>
+  </div>
+
+
+
+
+</div>
+
+<!--  <%#= time_ago_in_words(comment.created_at) %> ago-->
+
+<hr>
+

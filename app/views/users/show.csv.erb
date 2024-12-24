@@ -1,0 +1,11 @@
+
+<%= CSV.generate_line(["firstname","lastname","post","like count", "comments"]) %>
+<% @articles.each do |article| %>
+<% if article.comments.present? %>
+<% article.comments.each do |comment| %>
+<%= CSV.generate_line([article.user.firstname ,article.user.lastname ,article.body, article.likes.count, comment.body]) %>
+<% end %>
+<% else %>
+<%= CSV.generate_line([article.user.firstname ,article.user.lastname ,article.body, article.likes.count, 'nil' ]) %>
+<% end %>
+<% end %>

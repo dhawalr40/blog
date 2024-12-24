@@ -1,10 +1,9 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
   def index
-    @articles = Article.order(id: :desc)
+    @articles = Article.all.order(id: :desc)
     @article1 = Article.new
-    # def last_comment
-    #   comments.last.pluck("body")
-    # end
+    @user = User.all
   end
 
   def show
@@ -17,6 +16,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user_id = current_user.id
 
     if @article.save
       redirect_to root_path
@@ -48,6 +48,6 @@ class ArticlesController < ApplicationController
   
   private
     def article_params
-      params.require(:article).permit(:title, :body)
+      params.require(:article).permit(:title, :body, :status)
     end
 end

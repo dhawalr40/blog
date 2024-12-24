@@ -47,9 +47,30 @@
 .commentBox{
     /*margin: 45px 45px 0px 25px;*/
 }
+
+.comment-print-body{
+    width: auto;
+    /*height: 40px;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-print-body a{
+    color: black;
+    text-decoration: none;
+}
+
+.edit-comment{
+    display: flex;
+    flex-direction: column;
+    /* height: 104%; */
+    align-items: flex-end;
+}
+
 .printComment p{
-    width: 161px;
-    height: 22px;
+    width: 80%;
+    height: 25px;
 
     font-family: 'Montserrat';
     font-style: normal;
@@ -72,4 +93,17 @@
 .setLike{
     display: flex;
     gap: 20px;
+}
+
+.likecount{
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.likecount button{
+    border: none;
+    background: white;
+    font-family: Montserrat;
+    color: #606165;
 }
